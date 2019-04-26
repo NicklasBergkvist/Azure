@@ -1,0 +1,254 @@
+{
+  "id": "/subscriptions/1f625ad5-d45a-480c-aa70-735979581f6f/resourceGroups/NetworkWatcherRG/providers/Microsoft.Resources/deployments/CreateVm-MicrosoftWindowsDesktop.Windows-10-rs5-p-20190426211236",
+  "name": "CreateVm-MicrosoftWindowsDesktop.Windows-10-rs5-p-20190426211236",
+  "properties": {
+    "templateHash": "6674345727214389400",
+    "parameters": {
+      "location": {
+        "type": "String",
+        "value": "westus2"
+      },
+      "networkInterfaceName": {
+        "type": "String",
+        "value": "vm2785"
+      },
+      "networkSecurityGroupName": {
+        "type": "String",
+        "value": "VM2-nsg"
+      },
+      "networkSecurityGroupRules": {
+        "type": "Array",
+        "value": [
+          {
+            "name": "default-allow-rdp",
+            "properties": {
+              "priority": 100,
+              "protocol": "TCP",
+              "access": "Allow",
+              "direction": "Inbound",
+              "sourceApplicationSecurityGroups": [],
+              "destinationApplicationSecurityGroups": [],
+              "sourceAddressPrefix": "78.70.240.102",
+              "sourcePortRange": "*",
+              "destinationAddressPrefix": "*",
+              "destinationPortRange": "3389"
+            }
+          }
+        ]
+      },
+      "subnetName": {
+        "type": "String",
+        "value": "default"
+      },
+      "virtualNetworkName": {
+        "type": "String",
+        "value": "NetworkWatcherRG-vnet"
+      },
+      "addressPrefixes": {
+        "type": "Array",
+        "value": [
+          "10.0.2.0/24"
+        ]
+      },
+      "subnets": {
+        "type": "Array",
+        "value": [
+          {
+            "name": "default",
+            "properties": {
+              "addressPrefix": "10.0.2.0/24"
+            }
+          }
+        ]
+      },
+      "publicIpAddressName": {
+        "type": "String",
+        "value": "VM2-ip"
+      },
+      "publicIpAddressType": {
+        "type": "String",
+        "value": "Dynamic"
+      },
+      "publicIpAddressSku": {
+        "type": "String",
+        "value": "Basic"
+      },
+      "virtualMachineName": {
+        "type": "String",
+        "value": "VM2"
+      },
+      "virtualMachineRG": {
+        "type": "String",
+        "value": "NetworkWatcherRG"
+      },
+      "osDiskType": {
+        "type": "String",
+        "value": "StandardSSD_LRS"
+      },
+      "virtualMachineSize": {
+        "type": "String",
+        "value": "Standard_NV24_Promo"
+      },
+      "adminUsername": {
+        "type": "String",
+        "value": "nicklas"
+      },
+      "adminPassword": {
+        "type": "SecureString"
+      },
+      "autoShutdownStatus": {
+        "type": "String",
+        "value": "Enabled"
+      },
+      "autoShutdownTime": {
+        "type": "String",
+        "value": "07:00"
+      },
+      "autoShutdownTimeZone": {
+        "type": "String",
+        "value": "W. Europe Standard Time"
+      },
+      "autoShutdownNotificationStatus": {
+        "type": "String",
+        "value": "Disabled"
+      },
+      "autoShutdownNotificationLocale": {
+        "type": "String",
+        "value": "en"
+      }
+    },
+    "mode": "Incremental",
+    "debugSetting": {
+      "detailLevel": "RequestContent, ResponseContent"
+    },
+    "provisioningState": "Running",
+    "timestamp": "2019-04-26T19:31:45.4581531Z",
+    "duration": "PT2.8903851S",
+    "correlationId": "84da7831-1c1a-4ef3-aae7-8b55234e66b8",
+    "providers": [
+      {
+        "namespace": "Microsoft.Network",
+        "resourceTypes": [
+          {
+            "resourceType": "networkInterfaces",
+            "locations": [
+              "westus2"
+            ]
+          },
+          {
+            "resourceType": "networkSecurityGroups",
+            "locations": [
+              "westus2"
+            ]
+          },
+          {
+            "resourceType": "virtualNetworks",
+            "locations": [
+              "westus2"
+            ]
+          },
+          {
+            "resourceType": "publicIpAddresses",
+            "locations": [
+              "westus2"
+            ]
+          }
+        ]
+      },
+      {
+        "namespace": "Microsoft.Compute",
+        "resourceTypes": [
+          {
+            "resourceType": "virtualMachines",
+            "locations": [
+              "westus2"
+            ]
+          }
+        ]
+      },
+      {
+        "namespace": "Microsoft.DevTestLab",
+        "resourceTypes": [
+          {
+            "resourceType": "schedules",
+            "locations": [
+              "westus2"
+            ]
+          }
+        ]
+      },
+      {
+        "namespace": "Microsoft.Resources",
+        "resourceTypes": [
+          {
+            "resourceType": "deployments",
+            "locations": [
+              null
+            ]
+          }
+        ]
+      }
+    ],
+    "dependencies": [
+      {
+        "dependsOn": [
+          {
+            "id": "/subscriptions/1f625ad5-d45a-480c-aa70-735979581f6f/resourceGroups/NetworkWatcherRG/providers/Microsoft.Network/networkSecurityGroups/VM2-nsg",
+            "resourceType": "Microsoft.Network/networkSecurityGroups",
+            "resourceName": "VM2-nsg"
+          },
+          {
+            "id": "/subscriptions/1f625ad5-d45a-480c-aa70-735979581f6f/resourceGroups/NetworkWatcherRG/providers/Microsoft.Network/virtualNetworks/NetworkWatcherRG-vnet",
+            "resourceType": "Microsoft.Network/virtualNetworks",
+            "resourceName": "NetworkWatcherRG-vnet"
+          },
+          {
+            "id": "/subscriptions/1f625ad5-d45a-480c-aa70-735979581f6f/resourceGroups/NetworkWatcherRG/providers/Microsoft.Network/publicIpAddresses/VM2-ip",
+            "resourceType": "Microsoft.Network/publicIpAddresses",
+            "resourceName": "VM2-ip"
+          }
+        ],
+        "id": "/subscriptions/1f625ad5-d45a-480c-aa70-735979581f6f/resourceGroups/NetworkWatcherRG/providers/Microsoft.Network/networkInterfaces/vm2785",
+        "resourceType": "Microsoft.Network/networkInterfaces",
+        "resourceName": "vm2785"
+      },
+      {
+        "dependsOn": [
+          {
+            "id": "/subscriptions/1f625ad5-d45a-480c-aa70-735979581f6f/resourceGroups/NetworkWatcherRG/providers/Microsoft.Network/networkInterfaces/vm2785",
+            "resourceType": "Microsoft.Network/networkInterfaces",
+            "resourceName": "vm2785"
+          }
+        ],
+        "id": "/subscriptions/1f625ad5-d45a-480c-aa70-735979581f6f/resourceGroups/NetworkWatcherRG/providers/Microsoft.Compute/virtualMachines/VM2",
+        "resourceType": "Microsoft.Compute/virtualMachines",
+        "resourceName": "VM2"
+      },
+      {
+        "dependsOn": [
+          {
+            "id": "/subscriptions/1f625ad5-d45a-480c-aa70-735979581f6f/resourceGroups/NetworkWatcherRG/providers/Microsoft.Compute/virtualMachines/VM2",
+            "resourceType": "Microsoft.Compute/virtualMachines",
+            "resourceName": "VM2"
+          }
+        ],
+        "id": "/subscriptions/1f625ad5-d45a-480c-aa70-735979581f6f/resourceGroups/NetworkWatcherRG/providers/Microsoft.DevTestLab/schedules/shutdown-computevm-VM2",
+        "resourceType": "Microsoft.DevTestLab/schedules",
+        "resourceName": "shutdown-computevm-VM2"
+      },
+      {
+        "dependsOn": [
+          {
+            "id": "/subscriptions/1f625ad5-d45a-480c-aa70-735979581f6f/resourceGroups/NetworkWatcherRG/providers/Microsoft.Compute/virtualMachines/VM2",
+            "resourceType": "Microsoft.Compute/virtualMachines",
+            "resourceName": "VM2"
+          }
+        ],
+        "id": "/subscriptions/1f625ad5-d45a-480c-aa70-735979581f6f/resourceGroups/NetworkWatcherRG/providers/Microsoft.Resources/deployments/microsoft.nvidia-gpu-driver-windows-20190426213035",
+        "resourceType": "Microsoft.Resources/deployments",
+        "resourceName": "microsoft.nvidia-gpu-driver-windows-20190426213035"
+      }
+    ],
+    "validationLevel": "Template"
+  }
+}
